@@ -82,7 +82,7 @@ class ClientIVCTests : public ::testing::Test {
 };
 
 /**
- * @brief A full Goblin test using PG that mimicks the basic aztec client architecture
+ * @brief A full Goblin test using PG that mimics the basic aztec client architecture
  *
  */
 TEST_F(ClientIVCTests, Full)
@@ -112,7 +112,7 @@ TEST_F(ClientIVCTests, Full)
         EXPECT_FOLDING_AND_DECIDING_VERIFIED(ivc.fold_output.accumulator, kernel_fold_proof);
     }
 
-    // Constuct four proofs: merge, eccvm, translator, decider
+    // Construct four proofs: merge, eccvm, translator, decider
     auto proof = ivc.prove();
 
     // Verify all four proofs

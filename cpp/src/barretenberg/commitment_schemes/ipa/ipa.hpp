@@ -175,7 +175,7 @@ template <typename Curve> class IPA {
      * @brief Verify the correctness of a Proof
      *
      * @param vk Verification_key containing srs and pippenger_runtime_state to be used for MSM
-     * @param proof The proof containg L_vec, R_vec and a_zero
+     * @param proof The proof containing L_vec, R_vec and a_zero
      * @param pub_input Data required to verify the proof
      *
      * @return true/false depending on if the proof verifies

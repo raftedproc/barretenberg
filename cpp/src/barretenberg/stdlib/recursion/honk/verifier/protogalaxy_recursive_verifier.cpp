@@ -200,7 +200,7 @@ void ProtoGalaxyRecursiveVerifier_<VerifierInstances>::verify_folding_proof(cons
     }
 
     // TODO(https://github.com/AztecProtocol/barretenberg/issues/833): As currently the stdlib transcript is not
-    // creating proper constraints linked to Fiat-Shamir we add an additonal gate to ensure assert_equal is correct.
+    // creating proper constraints linked to Fiat-Shamir we add an additional gate to ensure assert_equal is correct.
     // This comparison to 0 can be removed here and below once we have merged the transcript.
     auto zero = FF::from_witness(builder, ScalarNative(0));
     zero.assert_equal(accumulator->target_sum - perturbator_coeffs[0], "F(0) != e");

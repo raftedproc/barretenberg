@@ -12,7 +12,7 @@ TYPED_TEST_SUITE(BarycentricDataTests, FieldTypes);
 #define BARYCENTIC_DATA_TESTS_TYPE_ALIASES using FF = TypeParam;
 
 /**
- * @brief Ensure auxilliary arrays (e.g. big_domain) are computed at compile time if possible (i.e. if FF is a native
+ * @brief Ensure auxiliary arrays (e.g. big_domain) are computed at compile time if possible (i.e. if FF is a native
  * field)
  *
  */

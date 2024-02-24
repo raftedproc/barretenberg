@@ -102,7 +102,7 @@ std::vector<typename bb::Polynomial<typename Curve::ScalarField>> GeminiProver_<
         size_t chunk_size = n_l / num_used_threads;
         size_t last_chunk_size = (n_l % chunk_size) ? (n_l % num_used_threads) : chunk_size;
 
-        // Openning point is the same for all
+        // Opening point is the same for all
         const Fr u_l = mle_opening_point[l];
 
         // A_l_fold = Aₗ₊₁(X) = (1-uₗ)⋅even(Aₗ)(X) + uₗ⋅odd(Aₗ)(X)

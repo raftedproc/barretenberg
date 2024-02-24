@@ -63,7 +63,7 @@ class GoblinTranslatorFlavor {
     static constexpr auto NEGATIVE_MODULUS_LIMBS = CircuitBuilder::NEGATIVE_MODULUS_LIMBS;
 
     // Number of bits in a binary limb
-    // This is not a configurable value. Relations are sepcifically designed for it to be 68
+    // This is not a configurable value. Relations are specifically designed for it to be 68
     static constexpr size_t NUM_LIMB_BITS = CircuitBuilder::NUM_LIMB_BITS;
 
     // The number of multivariate polynomials on which a sumcheck prover sumcheck operates (including shifts). We

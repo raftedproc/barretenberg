@@ -33,20 +33,20 @@ TEST(crypto_merkle_tree, test_kv_memory_vs_memory_consistency)
     MemoryStore store;
     MerkleTree<MemoryStore, PedersenHashPolicy> db(store, depth);
 
-    std::vector<size_t> indicies(1 << depth);
-    std::iota(indicies.begin(), indicies.end(), 0);
+    std::vector<size_t> indices(1 << depth);
+    std::iota(indices.begin(), indices.end(), 0);
     std::random_device rd;
     std::mt19937 g(rd());
-    std::shuffle(indicies.begin(), indicies.end(), g);
+    std::shuffle(indices.begin(), indices.end(), g);
 
-    for (size_t i = 0; i < indicies.size(); ++i) {
-        size_t idx = indicies[i];
+    for (size_t i = 0; i < indices.size(); ++i) {
+        size_t idx = indices[i];
         memdb.update_element(idx, VALUES[idx]);
         db.update_element(idx, VALUES[idx]);
     }
 
-    for (size_t i = 0; i < indicies.size(); ++i) {
-        size_t idx = indicies[i];
+    for (size_t i = 0; i < indices.size(); ++i) {
+        size_t idx = indices[i];
         EXPECT_EQ(db.get_hash_path(idx), memdb.get_hash_path(idx));
     }
 

@@ -37,7 +37,7 @@ TEST(Flavor, Getters)
     // Shited polynomials have the righ tsize
     EXPECT_EQ(prover_polynomials.get_all().size(),
               prover_polynomials.get_shifted().size() + prover_polynomials.get_unshifted().size());
-    // Commitment lables are stored in the flavor.
+    // Commitment labels are stored in the flavor.
     EXPECT_EQ(commitment_labels.w_r, "W_R");
 }
 

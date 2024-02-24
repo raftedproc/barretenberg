@@ -43,7 +43,7 @@ template <typename FF> class Circuit {
     std::vector<std::string> variables;                         // circuit witness
     std::vector<uint32_t> public_inps;                          // public inputs from the circuit
     std::unordered_map<uint32_t, std::string> vars_of_interest; // names of the variables
-    std::unordered_map<std::string, uint32_t> terms;            // inverse map of the previous memeber
+    std::unordered_map<std::string, uint32_t> terms;            // inverse map of the previous member
     std::vector<std::vector<std::string>> selectors;            // selectors from the circuit
     std::vector<std::vector<uint32_t>> wires_idxs;              // values of the gates' wires
     std::vector<FF> vars;                                       // all the symbolic variables from the circuit
@@ -163,7 +163,7 @@ template <typename FF> void Circuit<FF>::add_gates()
 
         // Binary gate. Relaxes the solver.
         // TODO(alex): Probably we can add other basic gates here too to relax the stuff.
-        // TODO(alex): Theoretically this can be applyed after we ensure that the block of polynomial equations holds
+        // TODO(alex): Theoretically this can be applied after we ensure that the block of polynomial equations holds
         // and then simplify that block in future to relax the solver constraint system. Seems like a hard one to
         // implement or actually to automate, but I'll think on it for a while. it will probably require to split
         // add_gates and init methods into more complex/generalized parts.
@@ -209,7 +209,7 @@ template <typename FF> void Circuit<FF>::add_gates()
 template <typename FF> FF Circuit<FF>::operator[](const std::string& name)
 {
     if (!this->terms.contains(name)) {
-        throw std::length_error("No such an item " + name + " in vars or it vas not declared as interesting");
+        throw std::length_error("No such an item " + name + " in vars or it was not declared as interesting");
     }
     uint32_t idx = this->terms[name];
     return this->vars[idx];

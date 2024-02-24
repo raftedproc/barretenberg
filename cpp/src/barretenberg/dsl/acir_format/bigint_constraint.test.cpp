@@ -160,7 +160,7 @@ std::tuple<BigIntOperation, BigIntToLeBytes> generate_big_int_op_constraint_with
 TEST_F(BigIntTests, TestBigIntConstraintMultiple)
 {
     WitnessVector witness;
-    auto contraints = generate_big_int_op_constraint(BigIntOperationType::Add, fr(3), fr(1), witness);
+    auto constraints = generate_big_int_op_constraint(BigIntOperationType::Add, fr(3), fr(1), witness);
     auto contraints2 = generate_big_int_op_constraint(BigIntOperationType::Add, fr(3), fr(1), witness);
     auto contraints3 = generate_big_int_op_constraint(BigIntOperationType::Sub, fr(5), fr(2), witness);
     auto contraints4 = generate_big_int_op_constraint(BigIntOperationType::Mul, fr(5), fr(3), witness);
@@ -193,7 +193,7 @@ TEST_F(BigIntTests, TestBigIntConstraintMultiple)
         .constraints = {},
         .block_constraints = {},
     };
-    apply_constraints(constraint_system, contraints);
+    apply_constraints(constraint_system, constraints);
     apply_constraints(constraint_system, contraints2);
     apply_constraints(constraint_system, contraints3);
     apply_constraints(constraint_system, contraints4);
@@ -280,7 +280,7 @@ TEST_F(BigIntTests, TestBigIntConstraintSimple)
 TEST_F(BigIntTests, TestBigIntConstraintReuse)
 {
     WitnessVector witness;
-    auto contraints = generate_big_int_op_constraint_secpk1_fr(BigIntOperationType::Add, fr(3), fr(1), witness);
+    auto constraints = generate_big_int_op_constraint_secpk1_fr(BigIntOperationType::Add, fr(3), fr(1), witness);
     auto contraints2 = generate_big_int_op_constraint_secpk1_fr(BigIntOperationType::Sub, fr(5), fr(2), witness);
     auto contraints3 = generate_big_int_op_constraint_with_id(BigIntOperationType::Mul, 0, 5, witness);
     auto contraints4 = generate_big_int_op_constraint_with_id(BigIntOperationType::Div, 0, 1, witness);
@@ -314,7 +314,7 @@ TEST_F(BigIntTests, TestBigIntConstraintReuse)
         .constraints = {},
         .block_constraints = {},
     };
-    apply_constraints(constraint_system, contraints);
+    apply_constraints(constraint_system, constraints);
     apply_constraints(constraint_system, contraints2);
     constraint_system.bigint_to_le_bytes_constraints.push_back(get<1>(contraints3));
     constraint_system.bigint_operations.push_back(get<0>(contraints3));
@@ -337,7 +337,7 @@ TEST_F(BigIntTests, TestBigIntConstraintReuse)
 TEST_F(BigIntTests, TestBigIntConstraintReuse2)
 {
     WitnessVector witness;
-    auto contraints = generate_big_int_op_constraint_secpk1_fq(BigIntOperationType::Add, fr(3), fr(1), witness);
+    auto constraints = generate_big_int_op_constraint_secpk1_fq(BigIntOperationType::Add, fr(3), fr(1), witness);
     auto contraints2 = generate_big_int_op_constraint_secpk1_fq(BigIntOperationType::Sub, fr(5), fr(2), witness);
     auto contraints3 = generate_big_int_op_constraint_with_id(BigIntOperationType::Add, 0, 5, witness);
     auto contraints4 = generate_big_int_op_constraint_with_id(BigIntOperationType::Sub, 0, 1, witness);
@@ -371,7 +371,7 @@ TEST_F(BigIntTests, TestBigIntConstraintReuse2)
         .constraints = {},
         .block_constraints = {},
     };
-    apply_constraints(constraint_system, contraints);
+    apply_constraints(constraint_system, constraints);
     apply_constraints(constraint_system, contraints2);
     constraint_system.bigint_to_le_bytes_constraints.push_back(get<1>(contraints3));
     constraint_system.bigint_operations.push_back(get<0>(contraints3));

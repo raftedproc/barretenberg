@@ -19,7 +19,7 @@ concept IsNotUltraArithmetic = (Composer::CIRCUIT_TYPE != CircuitType::ULTRA);
  * @brief cycle_group represents a group Element of the proving system's embedded curve
  *        i.e. a curve with a cofactor 1 defined over a field equal to the circuit's native field Composer::FF
  *
- *        (todo @zac-williamson) once the pedersen refactor project is finished, this class will supercede
+ *        (todo @zac-williamson) once the pedersen refactor project is finished, this class will supersede
  * `stdlib::group`
  *
  * @tparam Composer

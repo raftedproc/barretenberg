@@ -24,7 +24,7 @@ Now you can import it using <cvc5/cvc5.h>
 
 ### There're five new methods inside (for now standard) circuit_builder
 
-- ```set_variable_name(u32 index, str name)``` - assignes a name to a variable. Specifically, binds a name with the first index of an equivalence class.
+- ```set_variable_name(u32 index, str name)``` - assigns a name to a variable. Specifically, binds a name with the first index of an equivalence class.
 
 - ```update_variable_names(u32 idx)``` - in case you've called ```assert_equal``` and ```update_real_variable_indices``` somewhere and you know that two or more variables from the equivalence class have separate names, call this method. Idx is the index of one of the variables of this class. The name of the first variable in class will remain.
 

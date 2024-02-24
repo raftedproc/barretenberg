@@ -280,7 +280,7 @@ TEST_F(AvmExecutionTests, simpleInternalCall)
     gen_proof_and_validate(bytecode, std::move(trace), {});
 }
 
-// Positive test with some nested internall calls
+// Positive test with some nested internal calls
 // We use the following functions (internal calls):
 // F1: ADD(2,3,2)  M[2] = M[2] + M[3]
 // F2: MUL(2,3,2)  M[2] = M[2] * M[3]
@@ -442,7 +442,7 @@ TEST_F(AvmExecutionTests, invalidOpcode)
     EXPECT_THROW_WITH_MESSAGE(Deserialization::parse(bytecode), "Invalid opcode");
 }
 
-// Negative test detecting an invalid memmory instruction tag.
+// Negative test detecting an invalid memory instruction tag.
 TEST_F(AvmExecutionTests, invalidInstructionTag)
 {
     std::string bytecode_hex = to_hex(OpCode::ADD) +      // opcode ADD

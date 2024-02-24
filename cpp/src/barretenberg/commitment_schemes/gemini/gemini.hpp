@@ -45,7 +45,7 @@
 namespace bb {
 
 /**
- * @brief Prover output (evalutation pair, witness) that can be passed on to Shplonk batch opening.
+ * @brief Prover output (evaluation pair, witness) that can be passed on to Shplonk batch opening.
  * @details Evaluation pairs {r, A₀₊(r)}, {-r, A₀₋(-r)}, {-r^{2^j}, Aⱼ(-r^{2^j)}, j = [1, ..., m-1]
  * and witness (Fold) polynomials
  * [

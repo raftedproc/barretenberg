@@ -298,7 +298,7 @@ template <typename Curve> class ZeroMorphProver_ {
         // setup until we can do the real thing), and B) its not clear to me how to update our pairing algorithms to do
         // this type of pairing. For now, simply construct q_{\zeta} + z*q_Z without the shift and do a standard KZG
         // pairing check. When we're ready, all we have to do to make this fully legit is commit to the shift here and
-        // update the pairing check accordingly. Note: When this is implemented properly, it doesnt make sense to store
+        // update the pairing check accordingly. Note: When this is implemented properly, it doesn't make sense to store
         // the (massive) shifted polynomial of size N_max. Ideally would only store the unshifted version and just
         // compute the shifted commitment directly via a new method.
         auto batched_shifted_quotient = batched_quotient;

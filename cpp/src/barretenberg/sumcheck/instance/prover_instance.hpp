@@ -17,7 +17,7 @@ namespace bb {
  *
  */
 // TODO(https://github.com/AztecProtocol/barretenberg/issues/725): create an Instances class that manages several
-// Instance and passes them to ProtoGalaxy prover and verifier so that Instance objects don't need to mantain an index
+// Instance and passes them to ProtoGalaxy prover and verifier so that Instance objects don't need to maintain an index
 template <class Flavor> class ProverInstance_ {
     using Circuit = typename Flavor::CircuitBuilder;
     using ProvingKey = typename Flavor::ProvingKey;
